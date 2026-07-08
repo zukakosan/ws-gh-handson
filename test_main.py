@@ -22,14 +22,14 @@ def test_create_todo():
 
 # ハンズオンで実装するテスト（現時点では実行しない）
 #
-# def test_get_todo_by_id():
-#     response = client.get("/todos/1")
-#     assert response.status_code == 200
-#     data = response.json()
-#     assert data["id"] == 1
-#     assert data["title"] == "Buy groceries"
+def test_get_todo_by_id():
+    response = client.get("/todos/1")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["id"] == 1
+    assert data["title"] == "Buy groceries"
 #
 #
-# def test_get_todo_not_found():
-#     response = client.get("/todos/9999")
-#     assert response.status_code == 404
+def test_get_todo_not_found():
+    response = client.get("/todos/9999")
+    assert response.status_code == 404
