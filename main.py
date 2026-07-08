@@ -44,9 +44,9 @@ def create_todo(todo: TodoCreate):
 # GET /todos/{todo_id} で指定した id の TODO を返し、
 # 見つからない場合は 404 を返すようにする。
 #
-# @app.get("/todos/{todo_id}", response_model=Todo)
-# def get_todo(todo_id: int):
-#     for todo in todos:
-#         if todo.id == todo_id:
-#             return todo
-#     raise HTTPException(status_code=404, detail="Todo not found")
+@app.get("/todos/{todo_id}", response_model=Todo)
+def get_todo(todo_id: int):
+    for todo in todos:
+        if todo.id == todo_id:
+            return todo
+    raise HTTPException(status_code=404, detail="Todo not found")
